@@ -3,6 +3,8 @@ import java.awt.Font;
 import java.awt.FontFormatException;
 import java.awt.GraphicsDevice;
 import java.awt.GraphicsEnvironment;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.io.IOException;
 import java.util.Date;
 import javax.swing.ImageIcon;
@@ -232,5 +234,45 @@ public class GUI {
 		parkingMode.setBounds(10,380,width-20,40);   //Parking mode set button
 		
 		//System.out.println(mainFrame.getBounds());
+		
+		/* Button Handlers
+		 * It will be a mess around here
+		 */
+		reset.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				setTrip(0);                           // Do reset the trip
+			}
+		});
+		lowSpeed.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				setMode(0);
+			}
+		});
+		highSpeed.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				setMode(1);
+			}
+		});
+		sportMode.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				setMode(2);
+			}
+		});
+		reverseMode.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				setMode(3);
+			}
+		});
+		parkingMode.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				setMode(4);
+			}
+		});
 	}
 }
