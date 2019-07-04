@@ -215,21 +215,21 @@ public class GUI {
 		 */
 		
 		
-		batteryLabel.setBounds(width-170,0,170,50);  //Battery with Battery icon [R,O,Y,G]
-		time.setBounds(10,10,300,40);                //Time
+		batteryLabel.setBounds(width-175,0,180,50);  //Battery with Battery icon [R,O,Y,G]
+		time.setBounds(10,10,400,40);                //Time
 		trip.setBounds(10,60,300,40);                //Trip
 		reset.setBounds(10,100,100,40);              //Reset
-		temperatureLabel.setBounds(10,120,200,100);  //Label TEMPERATURE
-		batteryTemp.setBounds(10,190,40,40);         //Battery temperature icon [R, Y, G]
-		motorTemp.setBounds(50,190,40,40);           //Motor temperature icon [R, Y, G]
-		kmph.setBounds(width-360,100,300,130);       //KMPH main speedometer
-		kmphLabel.setBounds(width-60,150,60,50);     //Km/hr label in the speedometer
-		modeLabel.setBounds(10,240,100,40);          //MODE label
-		lowSpeed.setBounds(10,300,width-20,40);      //Low speed mode set button
-		highSpeed.setBounds(10,340,width-20,40);     //High speed mode set button
-		sportMode.setBounds(10,380,width-20,40);     //Sport mode set button
-		reverseMode.setBounds(10,420,width-20,40);   //Reverse mode set button
-		parkingMode.setBounds(10,460,width-20,40);   //Parking mode set button
+		temperatureLabel.setBounds(width-160,30,200,100);  //Label TEMPERATURE
+		batteryTemp.setBounds(width-100,100,40,40);         //Battery temperature icon [R, Y, G]
+		motorTemp.setBounds(width-50,100,40,40);           //Motor temperature icon [R, Y, G]
+		kmph.setBounds(width/2-200,60,300,130);       //KMPH main speedometer
+		kmphLabel.setBounds(width/2+100,120,60,50);     //Km/hr label in the speedometer
+		modeLabel.setBounds(10,170,100,40);          //MODE label
+		lowSpeed.setBounds(10,220,width-20,40);      //Low speed mode set button
+		highSpeed.setBounds(10,260,width-20,40);     //High speed mode set button
+		sportMode.setBounds(10,300,width-20,40);     //Sport mode set button
+		reverseMode.setBounds(10,340,width-20,40);   //Reverse mode set button
+		parkingMode.setBounds(10,380,width-20,40);   //Parking mode set button
 		
 		//System.out.println(mainFrame.getBounds());
 	}
