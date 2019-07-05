@@ -11,7 +11,10 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JSlider;
 import javax.swing.SwingConstants;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
 
 public class GUI {
 	JLabel batteryLabel = new JLabel("100%");
@@ -205,6 +208,16 @@ public class GUI {
 		mainFrame.add(parkingMode);
 		setMode(1);                       //Default HighSpeed Mode
 		
+		//Backlight Slider
+		JSlider backlight = new JSlider();
+		backlight.setOrientation(JSlider.HORIZONTAL);
+		backlight.setMaximum(1024);
+		backlight.setMinimum(100);
+		backlight.setSnapToTicks(true);
+		backlight.setBackground(Color.white);
+		backlight.setValue(1024);
+		mainFrame.add(backlight);
+		
 		//Get screen width and height		
 		GraphicsDevice gd = GraphicsEnvironment.getLocalGraphicsEnvironment().getDefaultScreenDevice();
 		int width = gd.getDisplayMode().getWidth();
@@ -232,6 +245,7 @@ public class GUI {
 		sportMode.setBounds(10,300,width-20,40);     //Sport mode set button
 		reverseMode.setBounds(10,340,width-20,40);   //Reverse mode set button
 		parkingMode.setBounds(10,380,width-20,40);   //Parking mode set button
+		backlight.setBounds(width-310,height-50,300,40);
 		
 		//System.out.println(mainFrame.getBounds());
 		
@@ -272,6 +286,20 @@ public class GUI {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				setMode(4);
+			}
+		});
+		
+		// Backlight handler
+		backlight.addChangeListener(new ChangeListener() {
+			@Override
+			public void stateChanged(ChangeEvent e) {
+				if(backlight.getMousePosition()!=null) {
+					float pos=(float) backlight.getMousePosition().getX();
+					pos/=300;
+					int temp=(int) (pos*(1024-100))+100;
+					backlight.setValue(temp);
+				}
+				Main.backlight.setBacklight(backlight.getValue());
 			}
 		});
 	}
